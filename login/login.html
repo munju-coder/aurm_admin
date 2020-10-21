@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>aurm admin login</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!--goolge webfont-->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<script>
+    $("document").ready(function(){
+        $(".log_btn > a").click(function(e){
+            e.preventDefault();
+
+            var mb_id = $("#mb_id").val();
+            var mb_passwd = $("#mb_passwd").val();
+
+            if(!mb_id)
+            {
+                alert("아이디를 입력하세요.");
+                return false;
+            }
+
+            if(!mb_passwd)
+            {
+                alert("비밀번호를 입력하세요.");
+                return false;
+            }
+
+        });
+    });
+</script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+    body { font-family: 'IBM Plex Sans', sans-serif; }
+    .w100 { width: 100%; }
+    .mb20px { margin-bottom: 20px; }
+    .fw_bold { font-weight: 600; }
+    #wrap .login_contents { background-color: #25333d; }
+    #wrap .loginArea { padding: 166px 100px; }
+    #wrap .loginArea ul { float: left; width: 47%; padding-right: 10px; text-align: center; margin-top: 95px; }
+    #wrap .loginArea ul li:first-child { margin-bottom: 22px; }
+    #wrap .loginArea ul li:last-child { color: white; font-size: 19px; }
+    #wrap .loginArea::after { content: ''; display: block; overflow: hidden; clear: both; }
+    #wrap .loginArea .login_form { float: left; width: 47%; border-left: 1px solid white; padding-left: 20px; }
+    .log_btn button { border: none; background-color: #6ed8aa; color: #25333d; font-size: 18px; }
+    .log_btn { width: 100%; background-color: #6ed8aa; margin-top: 50px; padding: 12px 0;  } 
+    #wrap .login_contents .login_form .login_box div input { padding: 11px 0; padding-left: 10px; border: 1px solid #6ed8aa; background-color: #25333d; }
+    #wrap .login_contents .login_form .login_box .log_chk { padding-top: 20px; }
+    .login_txt { color: rgb(168, 168, 168); }
+
+</style>
+<body>
+    <div id="wrap">
+        <section class="contents login_contents over_hidden">
+            <div class="loginArea">
+                <ul>
+                    <li><img src="../images/aurm_logo.png" alt="aurm logo image"></li>
+                    <li class="fw_bold">스마트 오더 관리자</li>
+                </ul>
+
+                <form action="" class="login_form">
+                    <section class="login_box t_center">
+                        <div><input type="text" class="w100 mb20px" name="mb_id" id="mb_id" placeholder="로그인"></div>
+                        <div><input type="password" class="w100" name="mb_passwd" id="mb_passwd" placeholder="비밀번호"></div>
+        
+                        <div class="log_chk t_left">
+                            <label class="log_label">
+                                <span class="checkmark"></span>
+                                <span class="login_txt">자동로그인</span>
+                                <input type="checkbox" checked="checked">
+                            </label>
+                        </div>
+                    </section>
+                    <div class="log_btn t_center"><button class="fw_bold">로그인</button></div>
+                </form>
+               
+            </div>
+        </section>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+body { font-family: 'IBM Plex Sans', sans-serif; }
+a { color: initial; text-decoration: none; }
+a:hover,a:active,a:visited ,a:link { text-decoration: none; }
+.cursor_p { cursor: pointer; }
+.over_hidden { overflow: hidden; }
+.dw_576px { width: 100%; max-width: 576px; margin: 0 auto; }
+input,select { outline: none; }
+.over_hidden { overflow: hidden; }
+#wrap { width: 768px; margin: 0 auto; overflow: hidden; }
+/*text-align*/
+.t_center { text-align: center; }
+.t_left { text-align: left; }
+.t_right { text-align: right; }
+/*color*/
+.aurm_bgColor { background-color: #25333d; }
+.aurm_bg_subColor { background-color: #6ed8aa; }
+.aurm_fColor { color: #25333d; }
+.aurm_f_subColor { color: #6ed8aa; }
+.aurm_btnColor { background-color: #4b6e82; }
