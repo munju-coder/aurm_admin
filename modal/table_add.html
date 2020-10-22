@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AURM ADMIN</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!--goolge webfont-->
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<style>
+    .table_add_box { width: 250px; }
+    .table_add_box h2 { font-size: 16px; background-color: #25333d; color: white; padding: 13px 20px; }
+    .table_add_box div { float: left;  }
+    .table_add_box div input { width: 130px; }
+    .table_add_box::after { content: ''; display: block; overflow: hidden; clear: both; }
+    .table_add_box .modal_btn button[type="submit"] { border: none; background-color: #25333d; color: white; }
+    .table_add_box .modal_btn button.cancel_btn { border: none; background-color: #ff4555; color: white; }
+
+
+
+</style>
+<body>
+    <div id="modal_box">
+        <div class="table_add_box t_center">
+            <h2>테이블 추가</h2>
+            <div>
+                <div class="f14">테이블 번호</div>
+                <input type="text">
+            </div>
+
+            <div>
+                <div class="f14">테이블 번호</div>
+                <input type="text">
+            </div>
+
+            <div class="modal_btn t_center">
+                <button type="submit" class="f14">확인</button>
+                <button class="cancel_btn f14">취소</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

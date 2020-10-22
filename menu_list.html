@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>AURM ADMIN</title>
+    <!--jquery-->
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <!--goolge webfont-->
+   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <!--css-->
+    <link rel="stylesheet" href="../aurm_admin/css/common.css">
+    <link rel="stylesheet" href="../aurm_admin/css/reset.css">
+    <link rel="stylesheet" href="../aurm_admin/css/style.css">
+</head>
+<script>
+    $(document).ready( function(){
+        $('nav ul li').click( function(){
+            $('nav ul li').removeClass('active');
+            $(this).addClass('active');
+
+            if($(this).hasClass == 'active'){
+                $(this).removeClass('active');
+            }else{ 
+                $(this).addClass('active');
+            }
+        });
+    });
+</script>
+<body>
+    <!--wrap {-->
+    <div id="wrap">
+        <!--header {-->
+        <header>
+            <div class="header_wrap dw_708px">
+                <img class="cursor_p" src="../aurm_admin/images/menu_btn.png" alt="menu icon">
+                <div><a href="../aurm_admin/index.html"><h1>아우름 카페</h1></a></div>
+            </div>
+        </header>
+        <!--} header-->
+
+        <!--nav {-->
+        <nav>
+            <div class="dw_708px">
+                <ul class="over_hidden">
+                    <li class=""><a href="../aurm_admin/index.html">주문현황</a></li>
+                    <li class=""><a href="../aurm_admin/order_list.html">주문내역</a></li>
+                    <li class=""><a href="../aurm_admin/sales_list.html">매출관리</a></li>
+                    <li class=""><a href="../aurm_admin/table_list.html">테이블관리</a></li>
+                    <li class="active"><a href="../aurm_admin/menu_list.html">메뉴관리</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!--} nav-->
+       
+        <!--contents {-->
+        <section class="contents sales_contents menu_contents">
+            <div class="dw_708px over_hidden">
+                <!--c_left {-->
+                <div class="c_left">
+                    <div class="table_status">
+                        <ul>
+                            <li class="f13">테이블 NO : <span>01</span></li>
+                            <li class="f11">아메리카노 : <span>3</span></li>
+                            <li class="f11">아이스라떼 : <span>2</span></li>
+                            <li class="f11">주문시간: am 10:35</li>
+                        </ul>
+
+                        <div class="table_btn t_center">
+                            <button class="accept_btn">접수</button>
+                            <button class="complete_btn">완료</button>
+                        </div>
+                    </div>
+
+                    <div class="table_status">
+                        <ul>
+                            <li class="f13">테이블 NO : <span>02</span></li>
+                            <li class="f11">아메리카노 : <span>3</span></li>
+                            <li class="f11">아이스라떼 : <span>2</span></li>
+                            <li class="f11">주문시간: am 10:35</li>
+                        </ul>
+
+                        <div class="table_btn t_center">
+                            <button class="accept_btn">접수</button>
+                            <button class="complete_btn">완료</button>
+                        </div>
+                    </div>
+
+                    <div class="table_status">
+                        <ul>
+                            <li class="f13">테이블 NO : <span>03</span></li>
+                            <li class="f11">아메리카노 : <span>3</span></li>
+                            <li class="f11">아이스라떼 : <span>2</span></li>
+                            <li class="f11">주문시간: am 10:35</li>
+                        </ul>
+
+                        <div class="table_btn t_center">
+                            <button class="accept_btn">접수</button>
+                            <button class="complete_btn">완료</button>
+                        </div>
+                    </div>
+
+                    <div class="table_status">
+                        <ul>
+                            <li class="f13">테이블 NO : <span>04</span></li>
+                            <li class="f11">아메리카노 : <span>3</span></li>
+                            <li class="f11">아이스라떼 : <span>2</span></li>
+                            <li class="f11">주문시간: am 10:35</li>
+                        </ul>
+
+                        <div class="table_btn t_center">
+                            <button class="accept_btn">접수</button>
+                            <button class="complete_btn">완료</button>
+                        </div>
+                    </div>
+                </div>
+                <!--} c_left-->
+               
+                <!--c_right {-->
+                <div class="c_right">
+                    
+                    <div class="button_box mb20px">
+                        <button id="cate_add" class="f14 cursor_p">분류 추가</button>
+                        <button id="menu_add" class="f14 cursor_p">메뉴 추가</button>
+                    </div>
+
+                    <div class="cr_bottom mb20px">
+                        <div class="over_hidden total_box">
+                            <ul>
+                                <li>주문합계 : <span class="fw_bold">120</span>건</li>
+                                <li>합계금액 : <span class="fw_bold">1,525,000</span>원</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!--table_num {-->
+                    <div class="table_num">
+                        <div class="sale_table_top">
+                            <div class="fw_bold">분류</div>
+                            <div class="fw_bold">메뉴</div>
+                            <div class="fw_bold">가격</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>디저트</div>
+                            <div>베이글</div>
+                            <div><span>7,000</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>디저트</div>
+                            <div>츄러스</div>
+                            <div><span>2,000</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>음료</div>
+                            <div>로리나</div>
+                            <div><span>4,000</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>커피</div>
+                            <div>아이스아메리카노</div>
+                            <div><span>4,500</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>커피</div>
+                            <div>아이스라떼</div>
+                            <div><span>5,500</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>커피</div>
+                            <div>카푸치노</div>
+                            <div><span>5,500</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>음료</div>
+                            <div>골드메달</div>
+                            <div><span>4,000</span>원</div>
+                        </div>
+
+                        <div class="sale_table_bottom">
+                            <div>음료</div>
+                            <div>탄산수</div>
+                            <div><span>4,000</span>원</div>
+                        </div>
+                    </div>
+                    <!--} table_num-->
+                </div>
+                <!--} c_right-->
+            </div>
+        </section>
+        <!--} contents-->
+    </div>
+    <!--} wrap-->
+</body>
+</html>
