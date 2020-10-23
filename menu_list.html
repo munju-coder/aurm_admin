@@ -6,6 +6,7 @@
     <title>AURM ADMIN</title>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../aurm_admin/js/common.js"></script>
     <!--goolge webfont-->
    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--css-->
@@ -15,21 +16,125 @@
 </head>
 <script>
     $(document).ready( function(){
-        $('nav ul li').click( function(){
-            $('nav ul li').removeClass('active');
-            $(this).addClass('active');
 
-            if($(this).hasClass == 'active'){
-                $(this).removeClass('active');
-            }else{ 
-                $(this).addClass('active');
+        /**
+        *@brief modal bg, modal_box toggle event
+        */
+        $('#menu_add,.modal_background').click( function(){
+            $('.modal_background,#menu_add_modal').toggle();
+        });
+
+        $('#cate_add,.modal_background').click( function(){
+            $('.modal_background,#catego_add_modal').toggle();
+        });
+
+        /**
+        * @brief 모달 창 (메뉴추가) table_add_form 유효성검사
+        */
+        $("#menu_add_modal .add_ok_btn").click(function(){
+
+            var menu_name = $("#menu_name").val();
+            var menu_price = $("#menu_price").val();
+
+            if(!menu_name) {
+                alert("메뉴명을 입력하세요.");
+                return false;
             }
+
+            if(!menu_price){
+                alert("가격을 입력하세요.");
+                return false;
+            }
+
+        });
+
+        /**
+        * @brief 모달 창 (분류추가) table_add_form 유효성검사
+        */
+        $("#catego_add_modal .cate_ok_btn").click(function(){
+
+            var cate_name = $("#cate_name").val();
+
+            if(!cate_name){
+                alert("분류명을 입력하세요.");
+                return false;
+            }
+
         });
     });
 </script>
 <body>
     <!--wrap {-->
     <div id="wrap">
+        <!--modalbackground bg call-->
+        <div class="modal_background"></div>
+        <!--menu_add_modal {-->
+        <div id="menu_add_modal">
+            <form action="" class="menu_add_form">
+                <div class="table_add_box menu_add_box t_center">
+                    <h2>메뉴 추가</h2>
+
+                    <script>
+                        $(document).ready( function(){
+                            $('option').mouseover( function(){
+                                $(this).css('background-color','red');
+                            });
+                        });
+                    </script>
+                    <div class="add_contents">
+                        <div class="add_select">
+                            <select name="" id="">
+                                <option value="">분류명</option>
+                                <option value="신메뉴">신메뉴</option>
+                                <option value="디저트">디저트</option>
+                                <option value="음료">음료</option>
+                                <option value="커피">커피</option>
+                                <option value="베이커리">베이커리</option>
+                                <option value="푸드">푸드</option>
+                            </select>
+                        </div>
+
+                        <div class="add_list">
+                            <div class="f14">메뉴명</div>
+                            <input type="text" class="mb15px" name="menu_name" id="menu_name">
+                        </div>
+            
+                        <div class="add_list mb20px">
+                            <div class="f14 mr15px">가격</div>
+                            <input type="text" name="menu_price" id="menu_price">
+                        </div>
+            
+                        <div class="modal_btn t_center">
+                            <button type="submit" class="f14 add_ok_btn">확인</button>
+                            <button class="cancel_btn f14">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--} menu_add_modal -->
+
+        <!--catego_add_modal-->
+        <div id="catego_add_modal">
+            <form action="" class="menu_add_form">
+                <div class="table_add_box menu_add_box t_center">
+                    <h2>분류 추가</h2>
+                    <div class="add_contents">
+                        <div class="add_list mb20px">
+                            <div class="f14 mb20px">분류명 입력</div>
+                            <input type="text" name="cate_name" id="cate_name">
+                        </div>
+            
+                        <div class="modal_btn t_center">
+                            <button type="submit" class="f14 cate_ok_btn ok_btn_bg">확인</button>
+                            <button class="cancel_btn f14">취소</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!--} catego_add_modal-->
+
         <!--header {-->
         <header>
             <div class="header_wrap dw_708px">

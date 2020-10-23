@@ -6,6 +6,7 @@
     <title>AURM ADMIN</title>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../aurm_admin/js/common.js"></script>
     <!--goolge webfont-->
    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--css-->
@@ -13,20 +14,6 @@
     <link rel="stylesheet" href="../aurm_admin/css/reset.css">
     <link rel="stylesheet" href="../aurm_admin/css/style.css">
 </head>
-<script>
-    $(document).ready( function(){
-        $('nav ul li').click( function(){
-            $('nav ul li').removeClass('active');
-            $(this).addClass('active');
-
-            if($(this).hasClass == 'active'){
-                $(this).removeClass('active');
-            }else{ 
-                $(this).addClass('active');
-            }
-        });
-    });
-</script>
 <body>
     <!--wrap {-->
     <div id="wrap">

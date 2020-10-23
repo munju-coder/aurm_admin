@@ -6,6 +6,7 @@
     <title>AURM ADMIN</title>
     <!--jquery-->
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="../aurm_admin/js/common.js"></script>
     <!--goolge webfont-->
    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
     <!--css-->
@@ -14,37 +15,35 @@
     <link rel="stylesheet" href="../aurm_admin/css/style.css">
 </head>
 
-<style>
-    .table_add_box { /* width: 250px;  */display: none; }
-    .table_add_box h2 { font-size: 16px; background-color: #25333d; color: white; padding: 13px 20px; }
-    .table_add_box div { float: left;  }
-    .table_add_box div input { width: 130px; }
-    .table_add_box::after { content: ''; display: block; overflow: hidden; clear: both; }
-
-
-</style>
 <script>
     $(document).ready( function(){
-        $('nav ul li').click( function(){
-            $('nav ul li').removeClass('active');
-            $(this).addClass('active');
-
-            if($(this).hasClass == 'active'){
-                $(this).removeClass('active');
-            }else{ 
-                $(this).addClass('active');
-            }
-        });
-
+        
+        /**
+        *@brief modal bg, table_list > modal_box toggle event
+        */
         $('.c_btn .table_add, .modal_background').click( function(){
-            $('.modal_background').toggle();
+            $('.modal_background, #modal_box').toggle();
         });
 
-        $('.c_btn .table_add').click( function(){
-            $('.modal_box').show();
+        /**
+        * @brief 테이블 추가 모달 창 table_add_form 유효성검사
+        */
+        $(".add_ok_btn").click(function(){
+
+            var table_num = $("#table_num").val();
+            var table_name = $("#table_name").val();
+
+            if(!table_num){
+                alert("테이블 번호를 입력하세요.");
+                return false;
+            }
+
+            if(!table_name){
+                alert("테이블 이름을 입력하세요.");
+                return false;
+            }
+
         });
-
-
     });
 </script>
 <body>
@@ -52,25 +51,31 @@
     <div id="wrap">
         <!--modalbackground bg call-->
         <div class="modal_background"></div>
+        <!--modal_box{-->
         <div id="modal_box">
-            <div class="table_add_box t_center">
-                <h2>테이블 추가</h2>
-                <div>
-                    <div class="f14">테이블 번호</div>
-                    <input type="text">
+            <form action="" class="table_add_form">
+                <div class="table_add_box t_center">
+                    <h2>테이블 추가</h2>
+                    <div class="add_contents">
+                        <div class="add_list">
+                            <div class="f14">테이블 번호</div>
+                            <input type="number" class="mb10px" name="table_num" id="table_num">
+                        </div>
+            
+                        <div class="add_list mb20px">
+                            <div class="f14">테이블 이름</div>
+                            <input type="text" name="table_name" id="table_name">
+                        </div>
+            
+                        <div class="modal_btn t_center">
+                            <button type="submit" class="f14 add_ok_btn">확인</button>
+                            <button class="cancel_btn f14">취소</button>
+                        </div>
+                    </div>
                 </div>
-    
-                <div>
-                    <div class="f14">테이블 번호</div>
-                    <input type="text">
-                </div>
-    
-                <div class="modal_btn">
-                    <button>확인</button>
-                    <button>취소</button>
-                </div>
-            </div>
+            </form>
         </div>
+        <!--} modal_box-->
         
         <!--header {-->
         <header>
